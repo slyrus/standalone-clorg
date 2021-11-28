@@ -1,0 +1,21 @@
+
+* clim drawing bug (?) demo
+#+begin_src lisp :session
+(asdf:load-system "mcclim")
+(asdf:load-system "clim-listener")
+(clim-listener:run-listener :new-process t)
+
+;; then hand compile standalone-clorg.lisp
+
+#+end_src
+
+
+** Draw an org chart node in the clim listener
+To do this, copy the following code and run it from the clim-listener
+
+#+begin_src lisp :session
+(with-room-for-graphics (*standard-output* :first-quadrant nil)
+  (present clim-user::*eu-org-chart*))
+
+#+end_src
+
